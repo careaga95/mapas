@@ -88,7 +88,7 @@ var municipalityKey = [];
 console.log(markerLayer);
 
 var icon = {
-    "iconUrl": '/mexico-risk-atlas/css/images/icon.png',
+    "iconUrl": '{{site.baseurl}}/css/images/icon.png',
     "iconSize": [10, 10],
     "opacity": 0.2
 };
