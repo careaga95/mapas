@@ -22,22 +22,22 @@ custom: true
    <div class="event-info col-md-12">
       Date: Event / Municipality / State
    </div>
-   <div class="explorer-label col-sm-3 col-md-3">
+   <div class="explorer-label col-xs-3 col-sm-3 col-md-3">
      <h2>Emergencia</h2>
    </div>
-   <div class="explorer-label col-sm-3 col-md-3">
+   <div class="explorer-label col-xs-3 col-sm-3 col-md-3">
      <h2>APIN</h2>
    </div>
-   <div class="explorer-label col-sm-6 ol-md-6">
+   <div class="explorer-label col-xs-6 col-sm-6 ol-md-6">
      <h2>Reconstrucci&oacute;n</h2>
    </div>
-   <div class="data-wrapper emergency-wrapper col-sm-3 col-md-3">
+   <div class="data-wrapper emergency-wrapper col-xs-3 col-sm-3 col-md-3">
      <table id="emergency" class="table"></table>
   </div>
-  <div class="data-wrapper apin-wrapper col-sm-3 col-md-3">
+  <div class="data-wrapper apin-wrapper col-xs-3 col-sm-3 col-md-3">
     <table id="apin" class="table"></table>   
   </div>
-  <div class="data-wrapper projects-wrapper col-sm-6 col-md-6">
+  <div class="data-wrapper projects-wrapper col-xs-6 col-sm-6 col-md-6">
     <table id="projects" class="table"></table>
   </div>
 </div>
@@ -355,8 +355,8 @@ $('body').on('click', '.layer-switch li a', function(e) {
 
 
 markers.on('click', function(e) {
-    console.log(e.layer.options.id);
     var targetRecord = '.' + e.layer.options.id;
+    $('#explorer').show();
     $('.project').css('background', 'none');
     $('.project').css('color', '#777');
     $(targetRecord).css('background', '#ccc');
@@ -382,6 +382,12 @@ municipalitiesLayer.on('mouseout', function(e) {
 });
 
 
+var hash = window.location.hash;
+if (hash === '#embed') {
+    $('body').addClass('embed');
+}
+
+
 function withCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -396,4 +402,7 @@ function formatDate(x) {
     var y = x.substring(4);
     return m + '/' + d + '/' + y;
 }
-</script>   
+
+
+
+</script> 

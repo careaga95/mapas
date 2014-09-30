@@ -165,9 +165,14 @@ h2 {
 /* Map
 =====================================================
 */
+
 #map {
-    height: 300px;
-    position: static;
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   background: #333;
+   left: 0;
+   top: 0;
 }
 .leaflet-control-zoom  {
   	top: 140px;
@@ -319,8 +324,19 @@ table {
 =====================================================
 */
 #explorer {
-  	position: static;
-  	height: auto;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right 0;
+	height: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: 100;
+	width: 100%;
+}
+.data-wrapper {
+	height: 200px;
+	overflow-y: scroll;
 }
 .event-info {
  	color: #ccc;
@@ -333,9 +349,7 @@ table {
 .explorer-label,
 .data-wrapper {
   	background: #000;
-  	background: rgba(0,0,0, 0.8);
-  	height: auto;
-  
+  	background: rgba(0,0,0, 0.8);  
 }
 .data-wrapper {
   	padding-bottom: 50px;
@@ -395,34 +409,28 @@ table {
 }
 
 
+/* Embed
+=====================================================
+*/
+.embed .navbar-default { 
+  display: none;
+}
+.embed #pager {
+  top: 0px;
+}
+
+
 @media (min-width: 780px) { 
   .navbar-brand {
     font-size: 16px;
   } 
-  #map {
-     width: 100%;
-     height: 100%;
-     position: fixed;
-     background: #333;
-     left: 0;
-     top: 0;
-  }
-  #explorer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right 0;
-  height: 230px;
-  margin-right: auto;
-  margin-left: auto;
-  z-index: 100;
-  width: 100%;
-  }
-  .data-wrapper {
-  height: 200px;
-  overflow-y: scroll;
-  }
   .navbar-default {
     position: fixed;
+  }
+}
+
+@media (max-width: 400px) { 
+  #explorer {
+    display: none !important;
   }
 }

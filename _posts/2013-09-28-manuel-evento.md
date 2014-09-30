@@ -408,6 +408,12 @@ municipalitiesLayer.on('mouseout', function(e) {
 });
 
 
+var hash = window.location.hash;
+if (hash === '#embed') {
+    $('body').addClass('embed');
+}
+
+
 function withCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -422,4 +428,5 @@ function formatDate(x) {
     var y = x.substring(4);
     return m + '/' + d + '/' + y;
 }
-</script>   
+
+</script>
