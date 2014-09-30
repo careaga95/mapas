@@ -109,7 +109,7 @@ console.log(markerLayer);
 
 var icon = {
     "iconUrl": '{{site.baseurl}}/css/images/icon.png',
-    "iconSize": [10, 10],
+    "iconSize": [15, 15],
     "opacity": 0.2
 };
 
