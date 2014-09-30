@@ -109,7 +109,7 @@ function countryStyleHover(feature) {
         'opacity': 0.9,
         'color': '#FF0000',
         'fillOpacity': 0.6,
-        'fillColor': '#FFFFFF'
+        'fillColor': '#8C0000'
     }
 }
 
