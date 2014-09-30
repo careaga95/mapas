@@ -136,12 +136,10 @@ $('#pager').hide();
 L.mapbox.accessToken = 'pk.eyJ1IjoiZGV2c2VlZCIsImEiOiJnUi1mbkVvIn0.018aLhX0Mb0tdtaT2QNe2Q';
 var map = L.mapbox.map('map', 'devseed.jfkl2aak').setView([24.6292882, -102.7022955], 5);
 var municipalitiesLayer = L.geoJson();
-var apiLayer = L.layerGroup();
-var markers = L.mapbox.featureLayer();
+var markers = new L.MarkerClusterGroup({ showCoverageOnHover: true, zoomToBoundsOnClick: false });
 var municipalityKey = [];
 municipalitiesLayer.addTo(map);
 markers.addTo(map);
-apiLayer.addTo(map);
 
 
 var icon = {
@@ -435,9 +433,12 @@ $('body').on('click', '.layer-switch li a', function(e) {
 });
 
 
-
+markers.on('clusterclick', function(e) {
+  e.layer.spiderfy();
+});
 
 markers.on('click', function(e) {
+   
     var targetRecord = '.' + e.layer.options.id;
     var eventId = e.layer.options.eventId;
     $('#explorer').show();

@@ -16,11 +16,11 @@ dropdown-menu: "http://201.175.32.249/api/action/datastore_search?resource_id=73
 info: "El Fondo de Desastres Naturales de México (FONDEN) fue establecido a finales de los años 90’s como un mecanismo presupuestario para apoyar de manera eficaz y oportuna a la rehabilitación de la infraestructura federal y estatal afectada por desastres naturales. En la actualidad, el FONDEN está compuesto por dos instrumentos presupuestarios complementarios: el Programa FONDEN para la Reconstrucción y el Programa Fondo para la Prevención de Desastres Naturales (FOPREDEN), y sus respectivos fideicomisos."
 custom: true
 tour: 
- - title: "Manual huracán golpea la costa oeste de México en <b>Septermber 18, 2013</b>."
+ - title: "Manual huracán golpea la costa oeste de México en <b>Septiembre 18, 2013</b>."
    lat: "0"
    lng: "0"
    zoom: "7"
- - title: "Municiaplities en el <b>estado de Sinaloa</b> sienten el impacto de la tormenta. </b>"
+ - title: "Municiaplities en el <b>estado de Sinaloa</b> sienten el impacto de la tormenta.</b>"
    lat: "0"
    lng: "0"
    zoom: "8"
@@ -101,7 +101,7 @@ var map = L.mapbox.map('map', null).setView([24.6292882, -102.7022955], 5);
 var baseLayer = L.mapbox.tileLayer('{{page.basemap}}').addTo(map);
 var overlayLayers = L.layerGroup().addTo(map);
 var municipalitiesLayer = L.geoJson();
-var markerLayer = L.mapbox.featureLayer();
+var markerLayer = new L.MarkerClusterGroup({ showCoverageOnHover: true, zoomToBoundsOnClick: false });
 var municipalityKey = [];
 
 
@@ -397,7 +397,9 @@ function init() {
 }
 
 
-
+markerLayer.on('clusterclick', function(e) {
+  e.layer.spiderfy();
+});
 
 markerLayer.on('click', function(e) {
     console.log(e.layer.options.id);
