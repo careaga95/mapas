@@ -328,14 +328,14 @@ table {
 	bottom: 0;
 	left: 0;
 	right 0;
-	height: 200px;
+	height: 280px;
 	margin-right: auto;
 	margin-left: auto;
 	z-index: 100;
 	width: 100%;
 }
 .data-wrapper {
-	height: 200px;
+	height: 250px;
 	overflow-y: scroll;
 }
 .event-info {
@@ -353,6 +353,19 @@ table {
 }
 .data-wrapper {
   	padding-bottom: 50px;
+}
+.modal-image {
+    width: 100%;
+    height: auto;
+}
+.modal-content {
+    background: #222;
+}
+.modal-content h4 {
+    background: none;
+}
+.modal-header {
+   display: none;
 }
 
 
@@ -417,6 +430,12 @@ table {
 }
 .embed #pager {
   top: 0px;
+}
+.embed #explorer {
+  height: 230px;
+}
+.embed .data-wrapper {
+  height: 200px;
 }
 
 
