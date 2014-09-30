@@ -1,10 +1,4 @@
-Datos.gob.mx - Map creation engine
-=========================================
-Jekyll-powered map creation with CKAN integration
+mapas
+=====
 
-CKAN instance: http://201.175.32.249
-
-jekyll serve --w
-
-
-
+One map to rule them all!

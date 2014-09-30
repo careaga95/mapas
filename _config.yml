@@ -1,3 +1,4 @@
+baseurl: /mapas
 permalink: pretty
 permalink: /map/:title
 

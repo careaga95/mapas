@@ -2,22 +2,22 @@ callback([
 
   {
     "text": "About",
-    "href": "/mexico-risk-atlas/about/"
+    "href": "/about/"
   } ,
 
   {
     "text": "2013/09/20: LLUVIA SEVERA",
-    "href": "/mexico-risk-atlas/map/event-imagery"
+    "href": "/map/event-imagery"
   } ,
 
   {
     "text": "Fondo de Desastres Naturales 2013",
-    "href": "/mexico-risk-atlas/map/fonden-desastres-2013"
+    "href": "/map/fonden-desastres-2013"
   } ,
 
   {
     "text": "Huracán: Manuel",
-    "href": "/mexico-risk-atlas/map/manuel-evento"
+    "href": "/map/manuel-evento"
   } 
 
 ])
