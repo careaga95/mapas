@@ -130,7 +130,6 @@ function init() {
     var datos = [];
 
     $('.loading').show();
-    $('#projects').empty();
     $('#explorer').hide();
     $('.layer-switch li a').removeClass('active');
     $(this).addClass('active');
@@ -142,6 +141,8 @@ function init() {
     $('.tour-item').hide();
 
 
+	$('#projects tr').remove();
+	$('#projects').append('<tr><td>Proyecto</td><td>Importe</td></tr>');
 
 
     $.ajax({
@@ -332,6 +333,10 @@ function init() {
                     $('#explorer').fadeIn();
                     $('#emergency tr').remove();
                     $('#apin tr').remove();
+                    
+                    $('#emergency').append('<tr><td>Articulo</td><td>Importe</td></tr>');
+                    $('#apin').append('<tr><td>Articulo</td><td>Federal</td><td>Estatal</td></tr>');
+
 
                     $.each(datos, function(index, value) {
                         if (value.munId === o.layer.feature.properties.CVE_MUN) {
@@ -350,13 +355,14 @@ function init() {
                     });
 
 
-                    if ($('#apin tr').length == 0) {
-                        $('#apin').append('<tr><td>No hay datos para este evento.</td></tr>');
+                    if ($('#emergency tr').length == 1) {
+                        $('#emergency').append('<tr><td>No hay datos para este evento.</td><td>-</td></tr>');
                     }
 
-                    if ($('#emergency tr').length == 0) {
-                        $('#emergency').append('<tr><td>No hay datos para este evento.</td></tr>');
+                    if ($('#apin tr').length == 1) {
+                        $('#apin').append('<tr><td>No hay datos para este evento.</td><td>-</td><td>-</td></tr>');
                     }
+
 
                 }
 

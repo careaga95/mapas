@@ -2,22 +2,22 @@ callback([
 
   {
     "text": "About",
-    "href": "/about/"
+    "href": "/mapas/about/"
   } ,
 
   {
     "text": "2013/09/20: LLUVIA SEVERA",
-    "href": "/map/event-imagery"
+    "href": "/mapas/map/event-imagery"
   } ,
 
   {
     "text": "Fondo de Desastres Naturales 2013",
-    "href": "/map/fonden-desastres-2013"
+    "href": "/mapas/map/fonden-desastres-2013"
   } ,
 
   {
     "text": "Huracán: Manuel",
-    "href": "/map/manuel-evento"
+    "href": "/mapas/map/manuel-evento"
   } 
 
 ])

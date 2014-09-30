@@ -142,7 +142,6 @@ $('body').on('click', '.layer-switch li a', function(e) {
     e.preventDefault();
 
     $('.loading').show();
-    $('#projects').empty();
     $('#explorer').hide();
     $('.layer-switch li a').removeClass('active');
     $(this).addClass('active');
@@ -152,12 +151,8 @@ $('body').on('click', '.layer-switch li a', function(e) {
     var event = $(this).text();
     $('#event-select-label').text(event);
 
-
-    //$('#info').append('<h4 class="group-title emergency-label">Emergency funds</h4><div class="emergency item-group"></div>');
-    //$('#info').append('<h4 class="group-title interim-label">Interim funds</h4><div class="interim item-group"><table class="table"><tr><td>Sector</td><td>Federal</td><td>Estatal</td></tr></table></div>');
-    // $('#projects').append('<h4 class="group-title projects-label">Reconstruction</h4><div class="projects item-group"><table class="table"></table></div>');
-
-
+	$('#projects tr').remove();
+	$('#projects').append('<tr><td>Proyecto</td><td>Importe</td></tr>');
 
 
     $.ajax({
@@ -186,9 +181,10 @@ $('body').on('click', '.layer-switch li a', function(e) {
                     });
 
 
-
                     marker.setIcon(L.icon(icon));
                     markers.addLayer(marker);
+                    
+                    
 
                     if (value['ACCION'] != null) {
                         $('#projects').append('<tr class="project record-' + value['_id'] + '"><td class="record-description"><p>' + value['ACCION'] + '</p></td><td>' + withCommas(value['MONTO.RECONSTRUCCION']) + '</td></tr>');
@@ -312,6 +308,9 @@ $('body').on('click', '.layer-switch li a', function(e) {
                     $('#explorer').fadeIn();
                     $('#emergency tr').remove();
                     $('#apin tr').remove();
+                    
+                    $('#emergency').append('<tr><td>Articulo</td><td>Importe</td></tr>');
+                    $('#apin').append('<tr><td>Articulo</td><td>Federal</td><td>Estatal</td></tr>');
 
                     $.each(datos, function(index, value) {
                         if (value.munId === o.layer.feature.properties.CVE_MUN) {
@@ -328,15 +327,17 @@ $('body').on('click', '.layer-switch li a', function(e) {
                             }
                         }
                     });
-
-
-                    if ($('#apin tr').length == 0) {
-                        $('#apin').append('<tr><td>No hay datos para este evento.</td></tr>');
+                    
+                    
+                    if ($('#emergency tr').length == 1) {
+                        $('#emergency').append('<tr><td>No hay datos para este evento.</td><td>-</td></tr>');
                     }
 
-                    if ($('#emergency tr').length == 0) {
-                        $('#emergency').append('<tr><td>No hay datos para este evento.</td></tr>');
+                    if ($('#apin tr').length == 1) {
+                        $('#apin').append('<tr><td>No hay datos para este evento.</td><td>-</td><td>-</td></tr>');
                     }
+
+
 
 
                 }
