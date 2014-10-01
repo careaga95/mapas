@@ -354,17 +354,17 @@ table {
 .data-wrapper {
   	padding-bottom: 50px;
 }
-.modal-image {
+#imageModal .modal-image {
     width: 100%;
     height: auto;
 }
-.modal-content {
+#imageModal .modal-content {
     background: #222;
 }
-.modal-content h4 {
+#imageModal .modal-content h4 {
     background: none;
 }
-.modal-header {
+#imageModal .modal-header {
    display: none;
 }
 

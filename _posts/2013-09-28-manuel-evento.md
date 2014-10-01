@@ -101,7 +101,7 @@ var map = L.mapbox.map('map', null).setView([24.6292882, -102.7022955], 5);
 var baseLayer = L.mapbox.tileLayer('{{page.basemap}}').addTo(map);
 var overlayLayers = L.layerGroup().addTo(map);
 var municipalitiesLayer = L.geoJson();
-var markerLayer = new L.MarkerClusterGroup({ showCoverageOnHover: true, zoomToBoundsOnClick: false });
+var markerLayer = new L.MarkerClusterGroup({ showCoverageOnHover: true, zoomToBoundsOnClick: true, disableClusteringAtZoom: 13, removeOutsideVisibleBounds: true});
 var municipalityKey = [];
 
 
@@ -396,10 +396,11 @@ function init() {
 
 }
 
-
+/*
 markerLayer.on('clusterclick', function(e) {
   e.layer.spiderfy();
 });
+*/
 
 markerLayer.on('click', function(e) {
     console.log(e.layer.options.id);
@@ -411,10 +412,10 @@ markerLayer.on('click', function(e) {
     $(targetRecord).css('color', '#000');
     $(targetRecord).ScrollTo();
     if (! $(targetRecord).hasClass('images-added')) {
-    $(targetRecord + ' td.record-description').append('<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-a.jpg"><img class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-a.jpg" /></a>'
-    					+ '<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-b.jpg"><img class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-b.jpg" /></a>' 
-    					+ '<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-c.jpg"><img class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-c.jpg" /></a>'
-    					+ '<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-d.jpg"><img class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-d.jpg" /></a>');
+    $(targetRecord + ' td.record-description').append('<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-a.jpg"><img onerror="imgError(this);" class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-a.jpg" /></a>'
+    					+ '<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-b.jpg"><img onerror="imgError(this);" class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-b.jpg" /></a>' 
+    					+ '<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-c.jpg"><img onerror="imgError(this);" class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-c.jpg" /></a>'
+    					+ '<a href="#" class="modal-trigger" data-toggle="modal" data-target="#imageModal" data-image="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-d.jpg"><img onerror="imgError(this);" class="project-image" src="https://s3.amazonaws.com/fondephotos/Fotos-out/' + eventId + '-d.jpg" /></a>');
     } 
     $(targetRecord).addClass('images-added');
 });
@@ -425,6 +426,8 @@ $('body').on('click', '.modal-trigger', function (){
     $('.modal-image').attr('src', image);
 });
 
+
+/*
 municipalitiesLayer.on('mouseover', function(e) {
     var layer = e.layer,
         feature = layer.feature;
@@ -436,10 +439,8 @@ municipalitiesLayer.on('mouseout', function(e) {
     var layer = e.layer,
         feature = layer.feature;
     layer.setStyle(countryStyle(layer));
-
-
 });
-
+*/
 
 var hash = window.location.hash;
 if (hash === '#embed') {
@@ -461,5 +462,10 @@ function formatDate(x) {
     var y = x.substring(4);
     return m + '/' + d + '/' + y;
 }
+
+function imgError(image){
+    $(image).hide();
+}
+
 
 </script>
