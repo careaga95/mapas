@@ -82,7 +82,7 @@ markerLayer.addTo(map);
 
 var icon = {
     "iconUrl": '{{site.baseurl}}/css/images/icon.png',
-    "iconSize": [15, 15],
+    "iconSize": [20, 20],
     "opacity": 0.2
 };
 
