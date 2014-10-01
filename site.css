@@ -525,7 +525,8 @@ table {
     outline: none;
     display: none;
 }
-#fullscreen:hover {
+#fullscreen:hover,
+#fullscreen:focus {
     text-decoration: none;
     background: #333;
 }
