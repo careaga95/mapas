@@ -194,15 +194,17 @@ $('body').on('click', '.layer-switch li a', function(e) {
                     var munId = munId.substring(2);
 
 
-                    var marker = L.marker(new L.LatLng(value['LATITUD'], value['LONGITUD']), {
-                        'id': 'record-' + value['_id'],
-                        'eventId':  value['CLAVE']
-                    });
-
-
-                    marker.setIcon(L.icon(icon));
-                    markerLayer.addLayer(marker);
-                    
+					if (value['_id'] == 6037 || value['_id'] == 5637 || value['_id'] == 4490) {
+					  // leave out these outliers
+					} else {
+						var marker = L.marker(new L.LatLng(value['LATITUD'], value['LONGITUD']), {
+							'id': 'record-' + value['_id'],
+                        	'eventId':  value['CLAVE']
+						});
+					
+						marker.setIcon(L.icon(icon));
+						markerLayer.addLayer(marker);
+                    }
                     
 
                     if (value['ACCION'] != null) {
