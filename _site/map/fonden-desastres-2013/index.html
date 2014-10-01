@@ -143,7 +143,7 @@ markerLayer.addTo(map);
 
 var icon = {
     "iconUrl": '/mapas/css/images/icon.png',
-    "iconSize": [15, 15],
+    "iconSize": [20, 20],
     "opacity": 0.2
 };
 
@@ -382,7 +382,7 @@ $('body').on('click', '.layer-switch li a', function(e) {
 
 
 
-            municipalitiesLayer.on('mousemove, touchmove', function(o) {
+            municipalitiesLayer.on('mousemove', function(o) {
                 if (o) {
 
                     $('#explorer').fadeIn();
