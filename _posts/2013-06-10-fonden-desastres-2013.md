@@ -454,6 +454,7 @@ municipalitiesLayer.on('mouseout', function(e) {
 var hash = window.location.hash;
 if (hash === '#embed') {
     $('body').addClass('embed');
+    map.scrollWheelZoom.disable();
 }
 
 
