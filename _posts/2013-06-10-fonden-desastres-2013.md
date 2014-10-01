@@ -62,6 +62,8 @@ custom: true
   </div>
 </div>
 
+<a target="_blank" href="#" id="fullscreen">&#8599;</a>
+
 <script type='text/javascript'>
 
 
@@ -478,5 +480,7 @@ function imgError(image){
     $(image).hide();
 }
 
+var path = window.location.pathname;
+$('a#fullscreen').attr('href', path);
 
 </script> 

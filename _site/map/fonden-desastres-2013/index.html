@@ -123,6 +123,8 @@
   </div>
 </div>
 
+<p><a target="_blank" href="#" id="fullscreen">↗</a></p>
+
 <script type="text/javascript">
 
 
@@ -539,6 +541,8 @@ function imgError(image){
     $(image).hide();
 }
 
+var path = window.location.pathname;
+$('a#fullscreen').attr('href', path);
 
 </script>
 <p> </p>

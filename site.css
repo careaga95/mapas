@@ -506,7 +506,32 @@ table {
 .embed .leaflet-control-zoom  {
     top: 39px;
 }
-
+#fullscreen {
+    display: block;
+    background: #404040;
+    z-index: 200;
+    position: fixed;
+    right: 10px;
+    top: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 0.5;
+    font-size: 26px;
+    width: 26px;
+    height: 26px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px 3px 3px 3px;
+    outline: none;
+    display: none;
+}
+#fullscreen:hover {
+    text-decoration: none;
+    background: #333;
+}
+.embed #fullscreen {
+    display: block;
+} 
 
 @media (min-width: 780px) { 
   .navbar-brand {
