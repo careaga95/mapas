@@ -348,7 +348,7 @@ function init() {
 
 
 
-            municipalitiesLayer.on('mousemove, touchmove', function(o) {
+            municipalitiesLayer.on('mousemove, touchstart', function(o) {
                 if (o) {
 
                     $('#explorer').fadeIn();

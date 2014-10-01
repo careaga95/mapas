@@ -321,7 +321,7 @@ $('body').on('click', '.layer-switch li a', function(e) {
 
 
 
-            municipalitiesLayer.on('mousemove, touchmove', function(o) {
+            municipalitiesLayer.on('mousemove, touchstart', function(o) {
                 if (o) {
 
                     $('#explorer').fadeIn();
