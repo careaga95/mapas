@@ -321,7 +321,7 @@ $('body').on('click', '.layer-switch li a', function(e) {
 
 
 
-            municipalitiesLayer.on('mousemove', function(o) {
+            municipalitiesLayer.on('mousemove, touchmove', function(o) {
                 if (o) {
 
                     $('#explorer').fadeIn();
@@ -356,13 +356,9 @@ $('body').on('click', '.layer-switch li a', function(e) {
                         $('#apin').append('<tr><td>No hay datos para este evento.</td><td>-</td><td>-</td></tr>');
                     }
 
-
-
-
                 }
 
             });
-
 
         }
 
