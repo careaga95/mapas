@@ -319,7 +319,7 @@ $('body').on('click', '.layer-switch li a', function(e) {
 
             });
 
-            municipalitiesLayer.on('touchmove', function(o) {
+            municipalitiesLayer.on('touchstart', function(o) {
                 if (o) {
 
                     $('#explorer').fadeIn();
