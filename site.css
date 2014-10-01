@@ -76,7 +76,7 @@ h2 {
   	font-size: 12px;
 }
 .navbar-default {
-    background-color: #000;
+    background-color: #474747;
     border-color: #555;
     border-radius: 0;
     z-index: 1000;
@@ -87,8 +87,7 @@ h2 {
 .dropdown-menu {
   	left: auto;
   	z-index: 2000;
-  	background: #000;
-  	background: rgba(0,0,0, 0.8);
+  	background: #474747;
   	max-height: 400px;
   	overflow-y: scroll;
   	display: none;
