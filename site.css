@@ -106,6 +106,7 @@ h2 {
 }
 .navbar-default .navbar-nav > li > a {
     color: #fff;
+    font-size: 13px;
 }
 .dropdown-menu > li > a {
   	color: #ccc;
