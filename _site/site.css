@@ -493,8 +493,8 @@ table {
 #slider {
   width: 65%;
   padding: 10px;
-  background: #222;
-  background: rgba(0,0,0, 0.7);
+  background: #474747;
+  background: rgba(71, 71, 71, 0.8);
   margin: 0 auto;
   right: 0;
   left: 0;
@@ -502,7 +502,7 @@ table {
   top: 60px; 
 }
 .layer-label {
-  color: #ccc;
+  color: #fff;
   font-size: 10px;
 }
 .label-right {
@@ -569,7 +569,7 @@ table {
     font-size: 40px;
   }
   .layer-label {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
