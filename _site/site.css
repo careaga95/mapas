@@ -491,7 +491,7 @@ table {
 	}
 
 #slider {
-  width: 70%;
+  width: 65%;
   padding: 10px;
   background: #222;
   background: rgba(0,0,0, 0.7);
@@ -499,7 +499,7 @@ table {
   right: 0;
   left: 0;
   position: fixed;
-  top: 100px; 
+  top: 60px; 
 }
 .layer-label {
   color: #ccc;
