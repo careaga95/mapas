@@ -502,7 +502,7 @@ table {
   top: 60px; 
 }
 .layer-label {
-  color: #ccc;
+  color: #fff;
   font-size: 10px;
 }
 .label-right {
@@ -569,7 +569,7 @@ table {
     font-size: 40px;
   }
   .layer-label {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
