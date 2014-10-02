@@ -367,6 +367,10 @@ table {
 #imageModal .modal-header {
    display: none;
 }
+.project-image-tooltip {
+   width: 100%;
+   height: auto;
+}
 
 
 /* Tour
@@ -486,7 +490,27 @@ table {
 	line-height: 30px;
 	}
 
-
+#slider {
+  width: 70%;
+  padding: 10px;
+  background: #222;
+  background: rgba(0,0,0, 0.7);
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  position: fixed;
+  top: 100px; 
+}
+.layer-label {
+  color: #ccc;
+  font-size: 10px;
+}
+.label-right {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 16px;
+}
 
 /* Embed
 =====================================================
@@ -516,7 +540,7 @@ table {
     color: #fff;
     text-align: center;
     line-height: 0.5;
-    font-size: 26px;
+    font-size: 18px;
     width: 26px;
     height: 26px;
     border: 1px solid;
@@ -525,7 +549,8 @@ table {
     outline: none;
     display: none;
 }
-#fullscreen:hover {
+#fullscreen:hover,
+#fullscreen:focus {
     text-decoration: none;
     background: #333;
 }
@@ -542,6 +567,9 @@ table {
   }
   .tour-item {
     font-size: 40px;
+  }
+  .layer-label {
+    font-size: 14px;
   }
 }
 
