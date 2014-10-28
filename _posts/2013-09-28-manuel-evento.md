@@ -168,6 +168,7 @@ function init() {
         type: 'GET',
         url: 'http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&filters={"Code": "20100180920130125"}&limit=100000',
         dataType: 'jsonp',
+        cache: true,
         success: function(data) {
 
             //console.log(data);
@@ -286,6 +287,7 @@ function init() {
         type: 'GET',
         url: 'http://201.175.32.249/api/action/datastore_search?resource_id=39e78078-495e-4c0e-a202-4b6668a226b9&filters={"Code": "20100180920130125"}&limit=100000',
         dataType: 'jsonp',
+        cache: true,
         success: function(data) {
 
             $.each(data.result.records, function(index, value) {
@@ -320,6 +322,7 @@ function init() {
         type: 'GET',
         url: 'http://201.175.32.249/api/action/datastore_search?resource_id=37814da6-8d53-4287-a8c4-86492a636cfb&filters={"Code": "20100180920130125"}&limit=100000',
         dataType: 'jsonp',
+        cache: true,
         success: function(data) {
 
             $.each(data.result.records, function(index, value) {
