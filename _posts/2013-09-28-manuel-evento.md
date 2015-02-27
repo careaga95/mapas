@@ -6,13 +6,9 @@ title: "Huracán: Manuel"
 splash: "manuel.png"
 basemap: "devseed.jfkl2aak"
 endpoints:
- - url: "http://201.175.32.249/api/action/datastore_search?resource_id=37814da6-8d53-4287-a8c4-86492a636cfb"
-   title: "Emergency care"
- - url: "http://201.175.32.249/api/action/datastore_search?resource_id=39e78078-495e-4c0e-a202-4b6668a226b9"
-   title: "Interim funds"
- - url: "http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&fields=CLAVE,Date,EVENTO&sort=Date desc"
+ - url: "http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&fields=CLAVE,Date,EVENTO&sort=Date desc"
    title: "Reconstruction"
-dropdown-menu: "http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&fields=Code,Date,EVENTO&sort=Date desc&limit=100000"
+dropdown-menu: "http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&fields=Code,Date,EVENTO&sort=Date desc&limit=100000"
 info: "El Fondo de Desastres Naturales de México (FONDEN) fue establecido a finales de los años 90’s como un mecanismo presupuestario para apoyar de manera eficaz y oportuna a la rehabilitación de la infraestructura federal y estatal afectada por desastres naturales. En la actualidad, el FONDEN está compuesto por dos instrumentos presupuestarios complementarios: el Programa FONDEN para la Reconstrucción y el Programa Fondo para la Prevención de Desastres Naturales (FOPREDEN), y sus respectivos fideicomisos."
 custom: true
 tour: 
@@ -166,7 +162,7 @@ function init() {
 
     $.ajax({
         type: 'GET',
-        url: 'http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&filters={"Code": "20100180920130125"}&limit=100000',
+        url: 'http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&filters={"Code": "20100180920130125"}&limit=100000',
         dataType: 'jsonp',
         cache: true,
         success: function(data) {
@@ -285,7 +281,7 @@ function init() {
 
     $.ajax({
         type: 'GET',
-        url: 'http://201.175.32.249/api/action/datastore_search?resource_id=39e78078-495e-4c0e-a202-4b6668a226b9&filters={"Code": "20100180920130125"}&limit=100000',
+        url: 'http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&filters={"Code": "20100180920130125"}&limit=100000',
         dataType: 'jsonp',
         cache: true,
         success: function(data) {
@@ -320,7 +316,7 @@ function init() {
 
     $.ajax({
         type: 'GET',
-        url: 'http://201.175.32.249/api/action/datastore_search?resource_id=37814da6-8d53-4287-a8c4-86492a636cfb&filters={"Code": "20100180920130125"}&limit=100000',
+        url: 'http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&filters={"Code": "20100180920130125"}&limit=100000',
         dataType: 'jsonp',
         cache: true,
         success: function(data) {
