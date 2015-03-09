@@ -14,8 +14,8 @@ basemap: devseed.jfe5nhb2
     title: Phase 3
 endpoint1: "http://201.175.32.249/api/action/datastore_search?resource_id=37814da6-8d53-4287-a8c4-86492a636cfb"
 endpoint2: "http://201.175.32.249/api/action/datastore_search?resource_id=39e78078-495e-4c0e-a202-4b6668a226b9"
-endpoint3: "http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&fields=CLAVE,Date,EVENTO&sort=Date desc"
-endpoint4: "http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&fields=Code,Date,EVENTO&sort=Date&limit=100000"
+endpoint3: "http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&fields=CLAVE,Date,EVENTO&sort=Date desc"
+endpoint4: "http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&fields=Code,Date,EVENTO&sort=Date&limit=100000"
 custom: false
 ---
 
