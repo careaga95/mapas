@@ -36,7 +36,7 @@ new L.Control.MiniMap(L.mapbox.tileLayer('devseed.jfe5nhb2'), {
 
 $.ajax({
     type: 'GET',
-    url: 'http://201.175.32.249/api/action/datastore_search?resource_id=738a516d-67aa-4b4b-837a-2b81b9c9f61f&filters={"Code": "20300200920130130"}&limit=100000',
+    url: 'http://catalogo.datos.gob.mx/api/action/datastore_search?resource_id=acbc6f7f-32cd-467d-8ee0-a71b4db7d647&filters={"Code": "20300200920130130"}&limit=100000',
     dataType: 'jsonp',
     success: function(data) {
 
