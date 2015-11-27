@@ -28,6 +28,8 @@
 
 <div id='map'></div>
 <pre id='features'>
+  <strong>Municipios</strong>
+  <div id='municipio'></div>
   <strong>Albergues</strong>
   <div id='albergues'></div>
 </pre>
@@ -65,6 +67,13 @@ function filterFeaturesWithId(features, id) {
 map.on('mousemove', function (e) {
     map.featuresAt(e.point, {radius: 5}, function (err, features) {
         if (err) throw err;
+
+        // Municipio
+        var filtered = filterFeaturesWithId(features, 'riesgo-inundacion');
+        var properties = _.pluck(filtered, 'properties');
+        var names = _.pluck(properties, 'NOMBRE');
+        var display = JSON.stringify(names, null, 2);
+        document.getElementById('municipio').innerHTML = display;
 
         // Albergues
         var filtered = filterFeaturesWithId(features, 'albergues');
