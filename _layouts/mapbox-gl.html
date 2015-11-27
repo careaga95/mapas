@@ -41,24 +41,24 @@ var map = new mapboxgl.Map({
 });
 
 
-function testFilterFeaturesWithSourceLayer() {
+function testFilterFeaturesWithId() {
     var mock = [
         {
-            'layer': { 'source-layer': 'albergues-baja' },
+            'layer': { 'id': 'albergues-baja' },
             'properties': {}
         },
         {
-            'layer': { 'source-layer': 'water' },
+            'layer': { 'id': 'water' },
             'properties': {}
         }
     ];
-    var filtered = filterFeaturesWithSourceLayer(mock, 'albergues');
+    var filtered = filterFeaturesWithId(mock, 'albergues');
     assert(filtered.length == 1, 'Should find only one albergue');
 }
 
-function filterFeaturesWithSourceLayer(features, sourceLayerName) {
+function filterFeaturesWithId(features, id) {
     return _.filter(features, function(f) {
-        return f['layer']['source-layer'].startsWith(sourceLayerName);
+        return f['layer']['id'].startsWith(id);
     });
 }
 
@@ -67,7 +67,7 @@ map.on('mousemove', function (e) {
         if (err) throw err;
 
         // Albergues
-        var filtered = filterFeaturesWithSourceLayer(features, 'albergues');
+        var filtered = filterFeaturesWithId(features, 'albergues');
         var properties = _.pluck(filtered, 'properties');
         var display = JSON.stringify(properties, null, 2);
         document.getElementById('albergues').innerHTML = display;
