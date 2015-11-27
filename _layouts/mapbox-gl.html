@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='http://underscorejs.org/underscore-min.js'></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.js'></script>
+    <script src='{{site.baseurl}}/js/tests.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+
+        #features {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            overflow: auto;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<pre id='features'>
+  <strong>Albergues</strong>
+  <div id='albergues'></div>
+</pre>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ29ibXgxNSIsImEiOiJjaWhndmJiN3QwbTVudmJrbDUyZG9sdGpjIn0.YKheMeeZzPEnmLY4YB4FiQ';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/gobmx15/cihgizrku00rq6vm5pu06zlmz',
+    center: [-105.513, 23.594], // starting position
+    zoom: 6 // starting zoom
+});
+
+
+function testFilterFeaturesWithSourceLayer() {
+    var mock = [
+        {
+            'layer': { 'source-layer': 'albergues-baja' },
+            'properties': {}
+        },
+        {
+            'layer': { 'source-layer': 'water' },
+            'properties': {}
+        }
+    ];
+    var filtered = filterFeaturesWithSourceLayer(mock, 'albergues');
+    assert(filtered.length == 1, 'Should find only one albergue');
+}
+
+function filterFeaturesWithSourceLayer(features, sourceLayerName) {
+    return _.filter(features, function(f) {
+        return f['layer']['source-layer'].startsWith(sourceLayerName);
+    });
+}
+
+map.on('mousemove', function (e) {
+    map.featuresAt(e.point, {radius: 5}, function (err, features) {
+        if (err) throw err;
+
+        // Albergues
+        var filtered = filterFeaturesWithSourceLayer(features, 'albergues');
+        var properties = _.pluck(filtered, 'properties');
+        var display = JSON.stringify(properties, null, 2);
+        document.getElementById('albergues').innerHTML = display;
+    });
+});
+
+</script>
+
+</body>
+</html>
+
